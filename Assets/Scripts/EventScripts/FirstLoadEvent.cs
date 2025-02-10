@@ -4,8 +4,11 @@ using UnityEngine.Events;
 
 public class FirstLoadEvent : MonoBehaviour
 {
+    [Header("Events")]
     UnityEvent onLoadEvent;
     UnityEvent onPressEnter = new UnityEvent();
+
+    [Header("GameObjects")]
     [SerializeField] AudioSource phoneNotifSource;
     [SerializeField] GameObject phoneTutorial;
     
@@ -49,6 +52,7 @@ public class FirstLoadEvent : MonoBehaviour
 
     public void PressEnter()
     {
+        phoneTutorial.SetActive(false);
         phoneNotifSource.Stop();
         onPressEnter.RemoveAllListeners();
     }
