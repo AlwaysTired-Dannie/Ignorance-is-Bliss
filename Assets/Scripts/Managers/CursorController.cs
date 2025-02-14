@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
+using Unity.VisualScripting;
 
 public class CursorController : MonoBehaviour
 {
@@ -19,15 +21,19 @@ public class CursorController : MonoBehaviour
 
     public static Action MakeCursorDefault;
     public static Action MakeCursorInteractive;
-    private bool cursorIsInteractive = false;
+    public bool cursorIsInteractive = false;
 
     public float DistanceThreshold;
 
     private Camera mainCamera;
+    public LayerMask interactableMask;
+    
+
 
     void Start()
     {
         mainCamera = Camera.main;
+        
     }
 
     private void Awake()
@@ -50,16 +56,43 @@ public class CursorController : MonoBehaviour
         controls.Disable();
     }
 
-    private void Update()
+    
+
+    private void FixedUpdate()
     {
         //FindInteractableWithinDistanceThreshold();
+
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = 100f;
         mousePos = mainCamera.ScreenToWorldPoint(mousePos);
         Debug.DrawRay(mainCamera.transform.position, mainCamera.transform.forward, Color.blue);
+        FindInteractable();
     }
 
-    private void FindInteractableWithinDistanceThreshold()
+    private void FindInteractable()
+    {
+        RaycastHit hit;
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out hit, 100, interactableMask))
+        {
+            Debug.Log("hit interactable");
+            InteractiveCursorTexture();
+            if (cursorIsInteractive)
+            {
+                IInteractable interactable = hit.transform.gameObject.GetComponent<IInteractable>();
+                if (interactable != null)
+                {
+                    Debug.Log("interacted");
+                    interactable.OnClickAction();
+                }
+            }
+        }
+        else DefaultCursorTexture();
+
+
+    }
+
+    /*private void FindInteractableWithinDistanceThreshold()
     {
         newSelectionTransform = null;
 
@@ -91,7 +124,7 @@ public class CursorController : MonoBehaviour
             currentSelectionTransform = newSelectionTransform;
             DefaultCursorTexture();
         }
-    }
+    }*/
 
     private void InteractiveCursorTexture()
     {
@@ -113,27 +146,24 @@ public class CursorController : MonoBehaviour
 
     private void EndedClick()
     {
-        RaycastHit hit;
-        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        if(Physics.Raycast(ray, out hit, 6))
-        {
-            
-            OnClickInteractable();
-        }
+        if(cursorIsInteractive) { OnClickInteractable(); }
         
     }
 
     private void OnClickInteractable()
     {
-
-        if (newSelectionTransform != null)
+        
+        //if (interactable != null) {
+        //    Debug.Log("interacted");
+        //    interactable.OnClickAction(); }
+        /*if (newSelectionTransform != null)
         {
             IInteractable interactable = newSelectionTransform.gameObject.GetComponent<IInteractable>();
             if (interactable != null) { interactable.OnClickAction(); }
             //sets cursor to default and makes so we can't click on this again
-            newSelectionTransform = null;
+            //newSelectionTransform = null;
             
-        }
+        }*/
     }
 
 }

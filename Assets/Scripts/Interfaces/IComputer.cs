@@ -7,7 +7,7 @@ public class IComputer : MonoBehaviour, IInteractable
         Debug.Log("Clicked on the computer");
     }
 
-    private void OnEnable()
+    /*private void OnEnable()
     {
         InteractableManager.AddToInteractablesEvent.Invoke(transform);
     }
@@ -15,5 +15,5 @@ public class IComputer : MonoBehaviour, IInteractable
     private void OnDisable()
     {
         InteractableManager.RemoveFromInteractablesEvent.Invoke(transform);
-    }
+    }*/
 }

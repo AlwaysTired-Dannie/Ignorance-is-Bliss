@@ -43,16 +43,11 @@ public class InteractableManager : MonoBehaviour
 
     private void AllChildrenWorldToScreenPoint()
     {
-       // RaycastHit hit;
-        //Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+       
         for (int i = 0; i < this.transform.childCount; i++)
         {
-            //if (Physics.Raycast(ray,out hit,6))
-            //{
-            //    transform.GetChild(i).position = mainCamera.ScreenPointToRay(transform.GetChild(i).position);
-            //}
+            
             transform.GetChild(i).position = mainCamera.WorldToScreenPoint(transform.GetChild(i).position);
-            //transform.GetChild(i).position = mainCamera.ScreenPointToRay(transform.GetChild(i).position);
 
             //increases sphere scale to be visible
             //transform.GetChild(i).localScale = Vector3.one * 100;

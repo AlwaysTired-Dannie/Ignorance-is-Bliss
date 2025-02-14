@@ -1057,7 +1057,11 @@ MonoBehaviour:
   interactableManager: {fileID: 172449820}
   interactiveCursorTexture: {fileID: 2800000, guid: 97d22afc0404ac2439f55055a5a41f1e, type: 3}
   newSelectionTransform: {fileID: 0}
+  cursorIsInteractive: 0
   DistanceThreshold: 60
+  interactableMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &288415379
 GameObject:
   m_ObjectHideFlags: 0
@@ -4436,8 +4440,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 569300066}
   m_HandleRect: {fileID: 569300065}
   m_Direction: 2
-  m_Value: 0.9999998
-  m_Size: 0.31017706
+  m_Value: 1
+  m_Size: 0.3101771
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
