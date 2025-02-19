@@ -1073,7 +1073,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactableManager: {fileID: 0}
   interactiveCursorTexture: {fileID: 2800000, guid: 97d22afc0404ac2439f55055a5a41f1e, type: 3}
-  newSelectionTransform: {fileID: 0}
   interactableMask:
     serializedVersion: 2
     m_Bits: 64
@@ -5011,9 +5010,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3478061295727668028, guid: 692a58ccad0126049b4d4cb3379b2399, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3478061295727668028, guid: 692a58ccad0126049b4d4cb3379b2399, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3478061295727668028, guid: 692a58ccad0126049b4d4cb3379b2399, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3478061295727668028, guid: 692a58ccad0126049b4d4cb3379b2399, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.58
+      objectReference: {fileID: 0}
     - target: {fileID: 4257216708252633049, guid: 692a58ccad0126049b4d4cb3379b2399, type: 3}
       propertyPath: m_Name
       value: Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257216708252633049, guid: 692a58ccad0126049b4d4cb3379b2399, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4907076736475211704, guid: 692a58ccad0126049b4d4cb3379b2399, type: 3}
       propertyPath: m_LocalScale.x
@@ -5071,6 +5090,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6119368605788687884, guid: 692a58ccad0126049b4d4cb3379b2399, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1837234602}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6945,7 +6968,7 @@ GameObject:
   - component: {fileID: 1837234601}
   - component: {fileID: 1837234604}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: ------MAIN CAMERA-----
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7585,11 +7608,11 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1837234603}
   - {fileID: 1208186615}
   - {fileID: 1871476138}
   - {fileID: 1412845259}
   - {fileID: 184282205}
-  - {fileID: 1837234603}
   - {fileID: 1914219694}
   - {fileID: 1760770902}
   - {fileID: 599291836}
