@@ -15,15 +15,9 @@ public class CursorController : MonoBehaviour
 
     private Cursor interactiveCursor;
 
-    [SerializeField]
-    private Transform newSelectionTransform;
-    private Transform currentSelectionTransform;
-
     public static Action MakeCursorDefault;
     public static Action MakeCursorInteractive;
-    public bool cursorIsInteractive = false;
-
-    public float DistanceThreshold;
+     bool cursorIsInteractive = false;
 
     private Camera mainCamera;
     public LayerMask interactableMask;
@@ -33,7 +27,6 @@ public class CursorController : MonoBehaviour
     void Start()
     {
         mainCamera = Camera.main;
-        
     }
 
     private void Awake()
@@ -58,7 +51,7 @@ public class CursorController : MonoBehaviour
 
     
 
-    private void FixedUpdate()
+    private void Update()
     {
         //FindInteractableWithinDistanceThreshold();
 
@@ -75,56 +68,20 @@ public class CursorController : MonoBehaviour
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, 100, interactableMask))
         {
-            Debug.Log("hit interactable");
+            //Debug.Log("hit interactable");
             InteractiveCursorTexture();
-            if (cursorIsInteractive)
+            if (cursorIsInteractive && Input.GetMouseButtonDown(0))
             {
                 IInteractable interactable = hit.transform.gameObject.GetComponent<IInteractable>();
-                if (interactable != null)
-                {
-                    Debug.Log("interacted");
-                    interactable.OnClickAction();
-                }
+
+                Debug.Log("interacted");
+                interactable.OnClickAction();
+
             }
         }
         else DefaultCursorTexture();
 
-
     }
-
-    /*private void FindInteractableWithinDistanceThreshold()
-    {
-        newSelectionTransform = null;
-
-        for (int itemIndex = 0;
-            itemIndex < interactableManager.Interactables.Count;
-            itemIndex++)
-        {
-            Vector3 fromMouseToInteractableOffset =
-                interactableManager.Interactables[itemIndex].position - new Vector3(
-                    controls.Mouse.Position.ReadValue<Vector2>().x,
-                    controls.Mouse.Position.ReadValue<Vector2>().y,
-                    0f);
-            float sqrMag = fromMouseToInteractableOffset.sqrMagnitude;
-
-            if (sqrMag < DistanceThreshold * DistanceThreshold)
-            {
-
-                newSelectionTransform = interactableManager.Interactables[itemIndex].transform;
-                if (cursorIsInteractive == false)
-                {
-                    InteractiveCursorTexture();
-                }
-                break;
-            }
-        }
-
-        if ( currentSelectionTransform != newSelectionTransform)
-        {
-            currentSelectionTransform = newSelectionTransform;
-            DefaultCursorTexture();
-        }
-    }*/
 
     private void InteractiveCursorTexture()
     {
@@ -146,24 +103,7 @@ public class CursorController : MonoBehaviour
 
     private void EndedClick()
     {
-        if(cursorIsInteractive) { OnClickInteractable(); }
         
-    }
-
-    private void OnClickInteractable()
-    {
-        
-        //if (interactable != null) {
-        //    Debug.Log("interacted");
-        //    interactable.OnClickAction(); }
-        /*if (newSelectionTransform != null)
-        {
-            IInteractable interactable = newSelectionTransform.gameObject.GetComponent<IInteractable>();
-            if (interactable != null) { interactable.OnClickAction(); }
-            //sets cursor to default and makes so we can't click on this again
-            //newSelectionTransform = null;
-            
-        }*/
     }
 
 }

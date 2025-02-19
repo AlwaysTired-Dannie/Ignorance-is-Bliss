@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -5,8 +6,10 @@ using UnityEngine.Events;
 public class FirstLoadEvent : MonoBehaviour
 {
     [Header("Events")]
-    UnityEvent onLoadEvent;
-    UnityEvent onPressEnter = new UnityEvent();
+    public static Action onLoadEvent;
+    public static Action onPressEnter;
+    //UnityEvent onLoadEvent;
+    //UnityEvent onPressEnter = new UnityEvent();
 
     [Header("GameObjects")]
     [SerializeField] AudioSource phoneNotifSource;
@@ -14,13 +17,15 @@ public class FirstLoadEvent : MonoBehaviour
     
     void Start()
     {
-        if (onLoadEvent == null)
+        /*if (onLoadEvent == null)
         {
             onLoadEvent = new UnityEvent();
-        }
+        }*/
+        onLoadEvent += OpenPhoneEvent;
+        onPressEnter += PressEnter;
+        //onLoadEvent.AddListener(OpenPhoneEvent);
 
-        onLoadEvent.AddListener(OpenPhoneEvent);
-        onPressEnter.AddListener(PressEnter);
+        //onPressEnter.AddListener(PressEnter);
         StartCoroutine(Countdown());
 
     }
@@ -30,30 +35,32 @@ public class FirstLoadEvent : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
         onLoadEvent.Invoke();
+        StopCoroutine(Countdown());
         
     }
 
-    
+    //checks if enter is pressed
     void Update()
     {
-        if (Input.GetButtonDown("Submit"))
+        if (Input.GetButtonDown("Submit") && phoneTutorial.activeSelf)
         {
             onPressEnter.Invoke();
         }
     }
 
-    //Event that sounds phone and control tutorial
+    //Event that sounds phone and control tutorial UI
     public void OpenPhoneEvent()
     {
         phoneNotifSource.PlayDelayed(1);
         phoneTutorial.SetActive(true);
-        //Debug.Log("Phone notif");
     }
 
+    //if enter was pressed, deactivate tutorial UI, stops notifcation sound, and unsubscribes event
     public void PressEnter()
     {
         phoneTutorial.SetActive(false);
         phoneNotifSource.Stop();
-        onPressEnter.RemoveAllListeners();
+        onPressEnter -= PressEnter;
+        onLoadEvent -= OpenPhoneEvent;
     }
 }
