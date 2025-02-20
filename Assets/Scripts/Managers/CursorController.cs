@@ -17,7 +17,7 @@ public class CursorController : MonoBehaviour
 
     public static Action MakeCursorDefault;
     public static Action MakeCursorInteractive;
-     bool cursorIsInteractive = false;
+    public static bool cursorIsInteractive = false;
 
     private Camera mainCamera;
     public LayerMask interactableMask;
@@ -53,7 +53,6 @@ public class CursorController : MonoBehaviour
 
     private void Update()
     {
-        //FindInteractableWithinDistanceThreshold();
 
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = 100f;
