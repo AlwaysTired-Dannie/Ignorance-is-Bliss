@@ -13,6 +13,8 @@ public class IFTBox : MonoBehaviour, IInteractable
 
     private float holdTimer = 0f;
     private bool isHolding = false;
+
+    public static Action onOpenedBox;
     public void OnClickAction()
     {
         StartCoroutine(FillCircle());
@@ -54,7 +56,7 @@ public class IFTBox : MonoBehaviour, IInteractable
     public void AssistantTime()
     {
         fillCircleSound.Stop();
-        Debug.Log("Assistant time!");
+        onOpenedBox.Invoke();
     }
     
 

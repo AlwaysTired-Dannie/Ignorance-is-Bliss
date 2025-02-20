@@ -8,6 +8,7 @@ public class CinematicEventManager : MonoBehaviour
 {
     [SerializeField]
     private PlayableDirector boxDropCinematic;
+    private PlayableDirector boxOpenCinematic;
 
     private void Start()
     {
@@ -17,11 +18,18 @@ public class CinematicEventManager : MonoBehaviour
     void SubscribeToStoryEvents()
     {
         FirstScrollEvent.OnScrolledToBottom += PlayBoxDropCinematic;
+        IFTBox.onOpenedBox += PlayBoxOpenCinematic;
     }
 
     private void PlayBoxDropCinematic()
     {
         boxDropCinematic.Play();
         FirstScrollEvent.OnScrolledToBottom -= PlayBoxDropCinematic;
+    }
+
+    private void PlayBoxOpenCinematic()
+    {
+        boxOpenCinematic.Play();
+        IFTBox.onOpenedBox -= PlayBoxOpenCinematic;
     }
 }

@@ -12,10 +12,10 @@ public class AssistantSpriteChange : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         emotionState = "default";
     }
-
+    //REMEMBER TO INVOKE THE VOID SOMEWHERE
     public void SwitchSprite()
     {
-        
+        //switch case for emotion changes
         switch (emotionState)
         {
             case "default":
@@ -42,20 +42,5 @@ public class AssistantSpriteChange : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        SwitchSprite();
-        if (Input.GetMouseButton(0))
-        {
-            emotionState = "upset";
-        }
-        if (Input.GetMouseButton(1))
-        {
-            emotionState = "default";
-        }
-        if (Input.GetMouseButton(2))
-        {
-            emotionState = "angry";
-        }
-    }
+    
 }
