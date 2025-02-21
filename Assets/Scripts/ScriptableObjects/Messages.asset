@@ -15,11 +15,16 @@ MonoBehaviour:
   Messages:
   - typeSpeed: 0
     currentText: This is a message
+    emotion: default
   - typeSpeed: 0
     currentText: Let's see how much text I can put into one message
+    emotion: default
   - typeSpeed: 0
     currentText: Message 3
+    emotion: upset
   - typeSpeed: 0
     currentText: I can definitely count
+    emotion: angry
   - typeSpeed: 0
     currentText: I honestly thought I forgot how to code
+    emotion: 

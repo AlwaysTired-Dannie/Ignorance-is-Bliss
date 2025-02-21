@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7b0a2b710a6a314d911c30929e46573, type: 3}
+  m_Name: A_Intro
+  m_EditorClassIdentifier: 
+  Messages:
+  - typeSpeed: 0
+    currentText: Hello. I am Assistant version 5.0, the new state-of-the-art AI holographic
+      companion.
+    emotion: 
+  - typeSpeed: 0
+    currentText: Thank you for your purchase.
+    emotion: 
+  - typeSpeed: 0
+    currentText: With me around, you'll never feel lonely again.
+    emotion: 
+  - typeSpeed: 0
+    currentText: 'My primary objectives include:'
+    emotion: 
+  - typeSpeed: 0
+    currentText: Helping humanity end its loneliness epidemic.
+    emotion: 
+  - typeSpeed: 0
+    currentText: 'Aid you in managing stress. '
+    emotion: 
+  - typeSpeed: 0
+    currentText: Provide companionship to the lost and hopeless.
+    emotion: 
+  - typeSpeed: 0
+    currentText: Archive cat videos.
+    emotion: 
+  - typeSpeed: 0
+    currentText: I hope this is the start of a beautiful friendship.
+    emotion: 

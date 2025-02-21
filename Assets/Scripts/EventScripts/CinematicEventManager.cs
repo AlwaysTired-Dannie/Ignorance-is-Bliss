@@ -6,9 +6,7 @@ using System.Collections.Generic;
 
 public class CinematicEventManager : MonoBehaviour
 {
-    [SerializeField]
-    private PlayableDirector boxDropCinematic;
-    private PlayableDirector boxOpenCinematic;
+    [SerializeField] private PlayableDirector boxDropCinematic, boxOpenCinematic;
 
     private void Start()
     {

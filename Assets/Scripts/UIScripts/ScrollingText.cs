@@ -14,8 +14,10 @@ public class  TypewriterMessage
     [SerializeField]
     public string currentText = null;
     private string displayText = null;
+    public string emotion;
 
     private Action onActionCallback = null;
+    public static event Action<TextSO> messageWithEmotionStarted;
     public TypewriterMessage(string msg, Action callback = null)
     {
         onActionCallback = callback;
@@ -47,16 +49,18 @@ public class  TypewriterMessage
     {
         if (string.IsNullOrEmpty(currentText))
             return;
+        
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
+            
             //keep revealing more of the message
             timer += typeSpeed;
             charIndex++;
-
             //assign the message to the typewriter
             displayText = currentText.Substring(0, charIndex);
-            displayText += "<color=#00000000>" + currentText.Substring(charIndex) + "</color>";
+            displayText += "<color=#00000000>" + currentText.Substring(charIndex) + "</color>"; //this is simply a preference so the text doesn't squiggle
+            
 
             //if we have reached the end of the sentence, stop typing
             if (charIndex >= currentText.Length)
@@ -79,20 +83,21 @@ public class  TypewriterMessage
 public class ScrollingText : MonoBehaviour
 {
     public TextMeshProUGUI tmpComponent;
-    //public Text Textcomponent ;
 
     private static ScrollingText instance;
     private List<TypewriterMessage> messages = new List<TypewriterMessage>();
 
     private TypewriterMessage currentText = null;
     private int msgIndex = 0;
-
+   
+    //this is for string messages in a script
     public static void Add(string msg, Action callback = null)
     {
         TypewriterMessage typeMsg = new TypewriterMessage(msg, callback);
         instance.messages.Add(typeMsg);
     }
 
+    //adds the messages from the scriptable object list
     public static void Add(TextSO scrObj)
     {
         for(int i = 0; i < scrObj.Messages.Count; i++)
@@ -104,7 +109,9 @@ public class ScrollingText : MonoBehaviour
 
     public static void Activate()
     {
+        //start of messages
         instance.currentText = instance.messages[0];
+        
     }
 
     private void Awake()
@@ -116,6 +123,7 @@ public class ScrollingText : MonoBehaviour
     {
         if (messages.Count > 0 && currentText != null)
         {
+            
             currentText.Update();
             tmpComponent.text = currentText.GetMsg();
         }
@@ -130,7 +138,7 @@ public class ScrollingText : MonoBehaviour
             currentText = null;
             return;
         }
-
+        //next message
         msgIndex++;
 
         if (msgIndex >= messages.Count)
@@ -143,10 +151,5 @@ public class ScrollingText : MonoBehaviour
         }
         currentText = messages[msgIndex];
     }
-
-
-
-
-
 
 }

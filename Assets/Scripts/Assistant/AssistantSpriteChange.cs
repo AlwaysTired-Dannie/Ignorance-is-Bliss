@@ -11,6 +11,7 @@ public class AssistantSpriteChange : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         emotionState = "default";
+        //TypewriterMessage.messageWithEmotionStarted += SwitchSprite;
     }
     //REMEMBER TO INVOKE THE VOID SOMEWHERE
     public void SwitchSprite()
@@ -41,6 +42,8 @@ public class AssistantSpriteChange : MonoBehaviour
             }
         }
     }
+
+
 
     
 }

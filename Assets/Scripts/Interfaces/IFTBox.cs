@@ -21,6 +21,7 @@ public class IFTBox : MonoBehaviour, IInteractable
         //StartCoroutine(HoldTimer());
     }
 
+    //hold left click to fill circle, play music
     IEnumerator FillCircle()
     {
         while (true)
@@ -36,7 +37,11 @@ public class IFTBox : MonoBehaviour, IInteractable
                 }
                 
             }
-            
+            else
+            {
+                StopMusic();
+            }
+            //circle is full, stop music, invoke open box cinematic
             if (holdTimer >= holdDuration)
             {
                 AssistantTime();
@@ -52,10 +57,14 @@ public class IFTBox : MonoBehaviour, IInteractable
     {
         fillCircleSound.Play();
     }
+    public void StopMusic()
+    {
+        fillCircleSound.Stop();
+    }
 
     public void AssistantTime()
     {
-        fillCircleSound.Stop();
+        StopMusic();
         onOpenedBox.Invoke();
     }
     
