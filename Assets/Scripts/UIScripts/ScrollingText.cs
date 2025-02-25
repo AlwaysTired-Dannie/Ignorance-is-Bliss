@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,10 +15,9 @@ public class  TypewriterMessage
     [SerializeField]
     public string currentText = null;
     private string displayText = null;
-    public string emotion;
 
     private Action onActionCallback = null;
-    public static event Action<TextSO> messageWithEmotionStarted;
+    [SerializeField] public Emotion emotion;
     public TypewriterMessage(string msg, Action callback = null)
     {
         onActionCallback = callback;
@@ -26,6 +26,19 @@ public class  TypewriterMessage
 
     public void Callback()
     {
+    
+        switch (emotion)
+        {
+            case Emotion.Normal:
+                Debug.Log("Emotion is normal");
+                break;
+            case Emotion.Upset:
+                Debug.Log("Emotion is upset");
+                break;
+            case Emotion.Angry:
+                Debug.Log("Emotion is angry");
+                break;
+        }
         if (onActionCallback != null) onActionCallback();
     }
 
@@ -51,9 +64,9 @@ public class  TypewriterMessage
             return;
         
         timer -= Time.deltaTime;
+        
         if (timer <= 0)
         {
-            
             //keep revealing more of the message
             timer += typeSpeed;
             charIndex++;
@@ -79,6 +92,12 @@ public class  TypewriterMessage
         return charIndex < currentText.Length;
     }
 }
+public enum Emotion
+{
+    Normal,
+    Upset,
+    Angry
+}
 
 public class ScrollingText : MonoBehaviour
 {
@@ -89,7 +108,7 @@ public class ScrollingText : MonoBehaviour
 
     private TypewriterMessage currentText = null;
     private int msgIndex = 0;
-   
+
     //this is for string messages in a script
     public static void Add(string msg, Action callback = null)
     {
@@ -104,11 +123,13 @@ public class ScrollingText : MonoBehaviour
         {
             TypewriterMessage typeMsg = new TypewriterMessage(scrObj.Messages[i].GetFullMsg());
             instance.messages.Add(typeMsg);
+            
         }
     }
 
     public static void Activate()
     {
+        
         //start of messages
         instance.currentText = instance.messages[0];
         

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScrollingTextAssistant : MonoBehaviour
 {
-    public TextSO scriptableObject;
+    public static TextSO scriptableObject;
     
     void Start()
     {

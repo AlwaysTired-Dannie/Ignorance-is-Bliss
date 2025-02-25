@@ -2586,7 +2586,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39d96e806217baa4e90f90a47e58bdca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scriptableObject: {fileID: 11400000, guid: 2ce49f524da52504d936db29ae095613, type: 2}
 --- !u!114 &886074363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4316,7 +4315,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 569300065}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.3101771
+  m_Size: 0.31017706
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7069,7 +7068,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1871476137}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bded0ae713a4e943b5151d4c0465722, type: 3}
   m_Name: 
@@ -7615,13 +7614,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2565665445641569578, guid: 023df51254b4960479d5b756f2d7a70d, type: 3}
+      propertyPath: emotionSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 2854bcf1474dff947968a33bed6cb8d7, type: 2}
+    - target: {fileID: 6012405995178191859, guid: 023df51254b4960479d5b756f2d7a70d, type: 3}
+      propertyPath: testEmt
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7549458008342315811, guid: 023df51254b4960479d5b756f2d7a70d, type: 3}
       propertyPath: m_Name
       value: TypeWriter
       objectReference: {fileID: 0}
     - target: {fileID: 7549458008342315811, guid: 023df51254b4960479d5b756f2d7a70d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
