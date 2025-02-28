@@ -123,12 +123,18 @@ public class ScrollingText : MonoBehaviour
     //adds the messages from the scriptable object list
     public static void Add(TextSO scrObj)
     {
-        for(int i = 0; i < scrObj.Messages.Count; i++)
+        for (int i = 0; i < scrObj.Messages.Count; i++)
         {
-            TypewriterMessage typeMsg = new TypewriterMessage(scrObj.Messages[i].GetFullMsg());
+            //Get emotion from the scriptable object
+            Emotion messageEmotion = scrObj.Messages[i].emotion;
+            TypewriterMessage typeMsg = new TypewriterMessage(scrObj.Messages[i].GetFullMsg(), null)
+            {
+                //typeSpeed = scrObj.Messages[i].typeSpeed,
+                emotion = messageEmotion
+            };
             instance.messages.Add(typeMsg);
-            
         }
+        
     }
 
     public static void Activate()

@@ -15,10 +15,10 @@ MonoBehaviour:
   Messages:
   - typeSpeed: 0
     currentText: This is not a very long message
-    emotion: 0
-  - typeSpeed: 0
-    currentText: Message number two
     emotion: 1
   - typeSpeed: 0
-    currentText: Message number, you guessed it, three!
+    currentText: Message number two
     emotion: 2
+  - typeSpeed: 0
+    currentText: Message number, you guessed it, three!
+    emotion: 1
