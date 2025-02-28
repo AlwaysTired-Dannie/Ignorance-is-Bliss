@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 [System.Serializable]
@@ -109,6 +111,8 @@ public class ScrollingText : MonoBehaviour
     private TypewriterMessage currentText = null;
     private int msgIndex = 0;
 
+    public static Action closePhone;
+
     //this is for string messages in a script
     public static void Add(string msg, Action callback = null)
     {
@@ -129,10 +133,8 @@ public class ScrollingText : MonoBehaviour
 
     public static void Activate()
     {
-        
         //start of messages
         instance.currentText = instance.messages[0];
-        
     }
 
     private void Awake()

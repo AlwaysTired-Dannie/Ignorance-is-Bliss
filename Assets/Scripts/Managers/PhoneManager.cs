@@ -6,7 +6,7 @@ public class PhoneManager : MonoBehaviour
     [SerializeField] private GameObject phMainMenuCanvas;
     [SerializeField] private GameObject phMessagesCanvas;
 
-    private bool isOpen;
+    public static bool isOpen;
 
     private void Start()
     {

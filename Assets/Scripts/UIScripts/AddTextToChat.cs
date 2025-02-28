@@ -5,20 +5,26 @@ public class AddTextToChat : AddText
 {
     [SerializeField] GameObject parentObject;
     [SerializeField] GameObject prefabText;
-    TextMeshProUGUI textMeshPro;
+    TextMeshProUGUI textBodyTMP;
+    TextMeshProUGUI textDateTMP;
     [SerializeField] string textMessage;
+    [SerializeField] string date;
 
     //first we grab the textmeshpro component
     private void Start()
     {
         //textMeshPro = prefabText.GetComponent<TextMeshProUGUI>();
-        textMeshPro = prefabText.GetComponentInChildren<TextMeshProUGUI>();
+        GameObject textBody  = prefabText.transform.GetChild(1).gameObject;
+        textBodyTMP = textBody.GetComponent<TextMeshProUGUI>();
+        GameObject textDate = prefabText.transform.GetChild(0).gameObject;
+        textDateTMP = textDate.GetComponent<TextMeshProUGUI>();
     }
 
     //then we instantiate the object as a child to the parentObject, and set the text as the string
     public override void AddTextChild()
     {
-        textMeshPro.text = textMessage;
+        textBodyTMP.text = textMessage;
+        textDateTMP.text = date;
         Instantiate(prefabText, parentObject.transform);
         
     }
