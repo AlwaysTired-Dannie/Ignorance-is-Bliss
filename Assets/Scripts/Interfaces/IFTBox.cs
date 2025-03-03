@@ -64,6 +64,7 @@ public class IFTBox : MonoBehaviour, IInteractable
 
     public void AssistantTime()
     {
+        gameObject.layer = 0;
         StopMusic();
         onOpenedBox.Invoke();
     }

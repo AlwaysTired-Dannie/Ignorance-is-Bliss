@@ -10,9 +10,10 @@ public class FirstScrollEvent : MonoBehaviour
     public static Action OnScrolledToBottom;
 
 
-    private void Start()
+    private void OnEnable()
     {
-        StartCoroutine(CheckIfEndOfScroll());
+        //StartCoroutine(CheckIfEndOfScroll());
+        OnScrolledToBottom.Invoke();
     }
 
     //checks if player has scrolled to bottom of FriendTech message, then stops coroutine and invokes event

@@ -16,28 +16,32 @@ MonoBehaviour:
   - typeSpeed: 0
     currentText: Hello. I am Assistant version 5.0, the new state-of-the-art AI holographic
       companion.
-    emotion: 
+    emotion: 0
   - typeSpeed: 0
     currentText: Thank you for your purchase.
-    emotion: 
+    emotion: 0
   - typeSpeed: 0
     currentText: With me around, you'll never feel lonely again.
-    emotion: 
+    emotion: 0
   - typeSpeed: 0
     currentText: 'My primary objectives include:'
-    emotion: 
+    emotion: 0
   - typeSpeed: 0
     currentText: Helping humanity end its loneliness epidemic.
-    emotion: 
+    emotion: 0
   - typeSpeed: 0
     currentText: 'Aid you in managing stress. '
-    emotion: 
+    emotion: 0
   - typeSpeed: 0
     currentText: Provide companionship to the lost and hopeless.
-    emotion: 
+    emotion: 0
   - typeSpeed: 0
     currentText: Archive cat videos.
-    emotion: 
+    emotion: 0
   - typeSpeed: 0
     currentText: I hope this is the start of a beautiful friendship.
-    emotion: 
+    emotion: 0
+  - typeSpeed: 0
+    currentText: 'Before we continue, let me show you something I think you know
+      very well. '
+    emotion: 0

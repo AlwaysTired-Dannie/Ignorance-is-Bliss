@@ -28,7 +28,11 @@ public class  TypewriterMessage
 
     public void Callback()
     {
-    
+        if (onActionCallback != null) onActionCallback();
+    }
+
+    public void ChangeEmotion()
+    {
         switch (emotion)
         {
             case Emotion.Normal:
@@ -41,7 +45,6 @@ public class  TypewriterMessage
                 Debug.Log("Emotion is angry");
                 break;
         }
-        if (onActionCallback != null) onActionCallback();
     }
 
     public string GetFullMsgAndCallback()
@@ -66,7 +69,7 @@ public class  TypewriterMessage
             return;
         
         timer -= Time.deltaTime;
-        
+
         if (timer <= 0)
         {
             //keep revealing more of the message
@@ -160,6 +163,7 @@ public class ScrollingText : MonoBehaviour
 
     public void WriteNextMessageInQueue()
     {
+        currentText.ChangeEmotion();
         //if active, show the entire string
         if (currentText != null && currentText.IsActive())
         {
