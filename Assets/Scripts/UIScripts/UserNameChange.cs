@@ -3,8 +3,8 @@ using TMPro;
 
 public class UserNameChange : MonoBehaviour
 {
-    [SerializeField] string chatName;
-    [SerializeField] string userName;
+    string chatName;
+    string userName;
     [SerializeField] TextMeshProUGUI textMeshPro;
 
     
