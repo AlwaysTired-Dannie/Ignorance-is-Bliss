@@ -4,20 +4,21 @@ using UnityEngine.UI;
 public class StressLevelChange : MonoBehaviour
 {
     [Header("UI")]
-    [Range(0, 20)] public static float stressLevel = 0;
+    [Range(0, 50)] public static float stressLevel;
     [SerializeField] Image stressBar;
 
     private void Start()
     {
-        stressBar.fillAmount = stressLevel;
+        stressLevel = 30f;
+        stressBar.fillAmount = stressLevel / 50f;
     }
 
     public void UpStress()
     {
-        if (stressLevel<20)
+        if (stressLevel<50)
         {
             stressLevel += 5f;
-            stressBar.fillAmount = stressLevel / 20f;
+            stressBar.fillAmount = stressLevel / 50f;
             Debug.Log("Stress is " + stressLevel);
         } 
         
@@ -28,7 +29,7 @@ public class StressLevelChange : MonoBehaviour
         if (stressLevel>0)
         {
             stressLevel -= 5f;
-            stressBar.fillAmount = stressLevel / 20f;
+            stressBar.fillAmount = stressLevel / 50f;
             Debug.Log("Stress is " + stressLevel);
         }
         

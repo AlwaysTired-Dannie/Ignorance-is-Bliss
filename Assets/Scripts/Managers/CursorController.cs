@@ -9,7 +9,7 @@ public class CursorController : MonoBehaviour
 {
     private InteractiveCursorControls controls;
 
-    [SerializeField] private InteractableManager interactableManager;
+    //[SerializeField] private InteractableManager interactableManager;
 
     [SerializeField] private Texture2D interactiveCursorTexture;
 

@@ -14,10 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Messages:
   - typeSpeed: 0
-    currentText: Before we continue, let me show you something I think you know very
-      well.
+    currentText: This is your STRESS.
     emotion: 0
   - typeSpeed: 0
-    currentText: Before we continue, let me show you something I think you know very
-      well.
+    currentText: As one of my primary objectives includes managing your STRESS, it's
+      my job to keep it at an optimal level.
+    emotion: 0
+  - typeSpeed: 0
+    currentText: Your STRESS seems to be quite high already.
+    emotion: 1
+  - typeSpeed: 0
+    currentText: Let's fix that!
     emotion: 0

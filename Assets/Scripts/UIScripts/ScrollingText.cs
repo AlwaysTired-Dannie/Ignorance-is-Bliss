@@ -178,11 +178,22 @@ public class ScrollingText : MonoBehaviour
         {
             currentText = null;
             tmpComponent.text = "";
-            Debug.Log("End of queue");
+            EndOfMessages();
             gameObject.SetActive(false);
             return;
         }
         currentText = messages[msgIndex];
+    }
+
+    public void EndOfMessages()
+    {
+        DInterface dInterface = this.gameObject.GetComponent<DInterface>();
+        if (dInterface != null)
+        {
+            dInterface.OnEndDialogue();
+        }
+        
+        Debug.Log("End of queue");
     }
 
 }
