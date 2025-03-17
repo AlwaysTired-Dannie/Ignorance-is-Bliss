@@ -2,18 +2,24 @@ using UnityEngine;
 
 public class IComputer : MonoBehaviour, IInteractable
 {
+    private bool firstClick = true;
+    [SerializeField] public GameObject firstComputerClick;
+    [SerializeField] public GameObject computer;
     public void OnClickAction()
     {
-        Debug.Log("Clicked on the computer");
+        if (firstClick) { 
+            firstComputerClick.SetActive(true);
+            Debug.Log("open cat video");
+            firstClick = false;
+        } else { 
+            computer.SetActive(true); }
     }
 
-    /*private void OnEnable()
+    public void CloseComputer()
     {
-        InteractableManager.AddToInteractablesEvent.Invoke(transform);
+        GameManager.instance.StopStressChange();
+        computer.SetActive(false);
     }
 
-    private void OnDisable()
-    {
-        InteractableManager.RemoveFromInteractablesEvent.Invoke(transform);
-    }*/
+    
 }

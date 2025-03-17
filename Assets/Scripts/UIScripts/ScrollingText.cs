@@ -132,7 +132,7 @@ public class ScrollingText : MonoBehaviour
             Emotion messageEmotion = scrObj.Messages[i].emotion;
             TypewriterMessage typeMsg = new TypewriterMessage(scrObj.Messages[i].GetFullMsg(), null)
             {
-                //typeSpeed = scrObj.Messages[i].typeSpeed,
+                typeSpeed = scrObj.Messages[i].typeSpeed,
                 emotion = messageEmotion
             };
             instance.messages.Add(typeMsg);
@@ -163,10 +163,15 @@ public class ScrollingText : MonoBehaviour
 
     public void WriteNextMessageInQueue()
     {
-        currentText.ChangeEmotion();
+        if (currentText != null)
+        {
+            currentText.ChangeEmotion();
+        }
+        
         //if active, show the entire string
         if (currentText != null && currentText.IsActive())
         {
+            currentText.ChangeEmotion();
             tmpComponent.text = currentText.GetFullMsgAndCallback();
             currentText = null;
             return;

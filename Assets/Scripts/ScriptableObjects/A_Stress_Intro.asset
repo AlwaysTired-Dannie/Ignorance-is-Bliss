@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: A_Stress_Intro
   m_EditorClassIdentifier: 
   Messages:
-  - typeSpeed: 0
+  - typeSpeed: 0.05
     currentText: This is your STRESS.
     emotion: 0
-  - typeSpeed: 0
+  - typeSpeed: 0.05
     currentText: As one of my primary objectives includes managing your STRESS, it's
       my job to keep it at an optimal level.
     emotion: 0
-  - typeSpeed: 0
+  - typeSpeed: 0.05
     currentText: Your STRESS seems to be quite high already.
     emotion: 1
-  - typeSpeed: 0
+  - typeSpeed: 0.05
     currentText: Let's fix that!
     emotion: 0
