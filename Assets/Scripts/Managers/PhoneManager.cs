@@ -2,9 +2,7 @@ using UnityEngine;
 
 public class PhoneManager : MonoBehaviour
 {
-    [SerializeField] private GameObject phoneMenu;
-    [SerializeField] private GameObject phMainMenuCanvas;
-    [SerializeField] private GameObject phMessagesCanvas;
+    [SerializeField] private GameObject phoneMenu, phMainMenuCanvas, phMessagesCanvas, phMessagesChildren, phFTCanvas, phFTApp;
 
     public static bool isOpen;
 
@@ -13,6 +11,9 @@ public class PhoneManager : MonoBehaviour
         phoneMenu.SetActive(false);
         phMainMenuCanvas.SetActive(false);
         phMessagesCanvas.SetActive(false);
+        phMessagesChildren.SetActive(false);
+        phFTCanvas.SetActive(false);
+        phFTApp.SetActive(false);
     }
 
     private void Update()
