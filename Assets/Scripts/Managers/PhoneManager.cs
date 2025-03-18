@@ -61,6 +61,9 @@ public class PhoneManager : MonoBehaviour
         phoneMenu.SetActive(false);
         phMainMenuCanvas.SetActive(false);
         phMessagesCanvas.SetActive(false);
+        phMessagesChildren.SetActive(false);
+        phFTCanvas.SetActive(false);
+        phFTApp.SetActive(false);
     }
 
     public void OpenMessagesMenu()

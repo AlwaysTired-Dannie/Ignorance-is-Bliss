@@ -29,7 +29,7 @@ public class IFTBox : MonoBehaviour, IInteractable
             isHolding = true;
             if (isHolding && Input.GetMouseButton(0))
             {
-                holdTimer += Time.deltaTime;
+                holdTimer += 1 * Time.deltaTime;
                 fillCircle.fillAmount = holdTimer / holdDuration;
                 if (!fillCircleSound.isPlaying)
                 {

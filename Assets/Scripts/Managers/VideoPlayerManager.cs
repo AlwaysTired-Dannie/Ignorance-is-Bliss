@@ -16,7 +16,7 @@ public class VideoPlayerManager : MonoBehaviour
 {
     [SerializeField] public List<Video> videoList;
     private VideoPlayer player;
-    private int videoIndex = 0;
+    //private int videoIndex = 0;
 
     private void Start()
     {
