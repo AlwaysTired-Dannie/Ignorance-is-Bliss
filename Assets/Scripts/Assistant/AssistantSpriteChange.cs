@@ -21,7 +21,7 @@ public class AssistantSpriteChange : MonoBehaviour
         {
             case "default":
                 //spriteRenderer.sprite = spriteImages[0];
-                actualName = "AssistantWIPBody";
+                actualName = "Face_Neutral";
                 break;
             case "upset":
                 //spriteRenderer.sprite = spriteImages[1];
