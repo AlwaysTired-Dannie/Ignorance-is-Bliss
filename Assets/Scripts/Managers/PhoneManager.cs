@@ -2,18 +2,19 @@ using UnityEngine;
 
 public class PhoneManager : MonoBehaviour
 {
-    [SerializeField] private GameObject phoneMenu, phMainMenuCanvas, phMessagesCanvas, phMessagesChildren, phFTCanvas, phFTApp;
+    [SerializeField] private GameObject phoneMenu, phMainMenuCanvas, phBackground, FTCanvas;
 
     public static bool isOpen;
 
     private void Start()
     {
-        phoneMenu.SetActive(false);
-        phMainMenuCanvas.SetActive(false);
-        phMessagesCanvas.SetActive(false);
-        phMessagesChildren.SetActive(false);
-        phFTCanvas.SetActive(false);
-        phFTApp.SetActive(false);
+        foreach (Transform child in transform)
+        {
+            foreach(Transform child2 in child) {
+                child2.gameObject.SetActive(false);
+            }
+            child.gameObject.SetActive(false);
+        }
     }
 
     private void Update()
@@ -53,17 +54,21 @@ public class PhoneManager : MonoBehaviour
     {
         phoneMenu.SetActive(true);
         phMainMenuCanvas.SetActive(true);
-        phMessagesCanvas.SetActive(false);
+        phBackground.SetActive(true);
+        FTCanvas.SetActive(false);
     }
 
     private void CloseAllPhones()
     {
-        phoneMenu.SetActive(false);
-        phMainMenuCanvas.SetActive(false);
-        phMessagesCanvas.SetActive(false);
-        phMessagesChildren.SetActive(false);
-        phFTCanvas.SetActive(false);
-        phFTApp.SetActive(false);
+        foreach (Transform child in transform)
+        {
+            foreach (Transform child2 in child)
+            {
+                child2.gameObject.SetActive(false);
+            }
+            child.gameObject.SetActive(false);
+        }
+        FTCanvas.SetActive(false);
     }
 
     public void OpenMessagesMenu()
