@@ -4,32 +4,31 @@ public class AssistantSpriteChange : MonoBehaviour
 {
     [SerializeField] SpriteRenderer spriteRenderer;
     public Sprite[] spriteImages;
-    public string emotionState;
     string actualName;
 
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        emotionState = "default";
-        //TypewriterMessage.messageWithEmotionStarted += SwitchSprite;
+        TypewriterMessage.onEmotionChange += SwitchSprite;
     }
     //REMEMBER TO INVOKE THE VOID SOMEWHERE
     public void SwitchSprite()
     {
         //switch case for emotion changes
-        switch (emotionState)
+        switch (TypewriterMessage.currentemotion)
         {
-            case "default":
+            case Emotion.Normal:
                 //spriteRenderer.sprite = spriteImages[0];
                 actualName = "Face_Neutral";
+                Debug.Log("this script has been called");
                 break;
-            case "upset":
+            case Emotion.Happy:
                 //spriteRenderer.sprite = spriteImages[1];
                 actualName = "upset";
-                Debug.Log("switch to upset");
+                Debug.Log("switch to Happy");
                 break;
-            case "angry":
-                Debug.Log("Switch to angry");
+            case Emotion.Upset:
+                Debug.Log("Switch to Upset");
                 break;
         }    
         //asign sprite into image

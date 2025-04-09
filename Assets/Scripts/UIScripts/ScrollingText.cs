@@ -19,7 +19,9 @@ public class  TypewriterMessage
     private string displayText = null;
 
     private Action onActionCallback = null;
+    public static Action onEmotionChange;
     [SerializeField] public Emotion emotion;
+    public static Emotion currentemotion;
     public TypewriterMessage(string msg, Action callback = null)
     {
         onActionCallback = callback;
@@ -30,22 +32,60 @@ public class  TypewriterMessage
     {
         if (onActionCallback != null) onActionCallback();
     }
-
+    #region EMOTION
     public void ChangeEmotion()
     {
         switch (emotion)
         {
             case Emotion.Normal:
                 Debug.Log("Emotion is normal");
+                currentemotion = Emotion.Normal;
+                onEmotionChange.Invoke();
+                break;
+            case Emotion.Happy:
+                Debug.Log($"Happy {emotion}");
+                currentemotion = Emotion.Happy;
+                onEmotionChange.Invoke();
                 break;
             case Emotion.Upset:
                 Debug.Log("Emotion is upset");
+                currentemotion = Emotion.Upset;
+                onEmotionChange.Invoke();
                 break;
             case Emotion.Angry:
                 Debug.Log("Emotion is angry");
+                currentemotion = Emotion.Angry;
+                onEmotionChange.Invoke();
+                break;
+            case Emotion.Surprised:
+                Debug.Log($"Surprised {emotion}");
+                currentemotion = Emotion.Surprised;
+                onEmotionChange.Invoke();
+                break;
+            case Emotion.Excited:
+                Debug.Log("Emotion is excited");
+                currentemotion= Emotion.Excited;
+                onEmotionChange.Invoke();
+                break;
+            case Emotion.Loving:
+                Debug.Log("Emotion is loving");
+                currentemotion = Emotion.Loving;
+                onEmotionChange.Invoke();
+                break;
+            case Emotion.Deranged1:
+                Debug.Log("Emotion is deranged 01");
+                currentemotion = Emotion.Deranged1;
+                onEmotionChange.Invoke();
+                break;
+            case Emotion.Deranged2:
+                Debug.Log("Emotion is deranged 02");
+                currentemotion = Emotion.Deranged2;
+                onEmotionChange.Invoke();
                 break;
         }
     }
+
+    #endregion
 
     public string GetFullMsgAndCallback()
     {
@@ -100,8 +140,14 @@ public class  TypewriterMessage
 public enum Emotion
 {
     Normal,
+    Happy,
     Upset,
-    Angry
+    Angry,
+    Surprised,
+    Excited,
+    Loving,
+    Deranged1,
+    Deranged2
 }
 
 public class ScrollingText : MonoBehaviour
