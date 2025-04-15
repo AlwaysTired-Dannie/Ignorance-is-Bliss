@@ -160,8 +160,6 @@ public class ScrollingText : MonoBehaviour
     private TypewriterMessage currentText = null;
     private int msgIndex = 0;
 
-    public static Action closePhone;
-
     //this is for string messages in a script
     public static void Add(string msg, Action callback = null)
     {

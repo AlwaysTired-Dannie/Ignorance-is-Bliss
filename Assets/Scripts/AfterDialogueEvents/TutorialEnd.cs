@@ -1,10 +1,12 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class TutorialEnd : MonoBehaviour, DInterface
 {
     [SerializeField] Transform newTransform;
     public static Action onTutorialEnd;
+    
     public void OnEndDialogue()
     {
         GameObject assistant = GameObject.FindGameObjectWithTag("Assistant");
@@ -14,6 +16,10 @@ public class TutorialEnd : MonoBehaviour, DInterface
             onTutorialEnd.Invoke();
             assistant.layer = 6;
         }
+        
+        
     }
+
+    
 
 }

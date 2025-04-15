@@ -17,20 +17,15 @@ public class FirstLoadEvent : MonoBehaviour
     
     void Start()
     {
-        /*if (onLoadEvent == null)
-        {
-            onLoadEvent = new UnityEvent();
-        }*/
+        
         onLoadEvent += OpenPhoneEvent;
         onPressEnter += PressEnter;
         //onLoadEvent.AddListener(OpenPhoneEvent);
 
         //onPressEnter.AddListener(PressEnter);
         StartCoroutine(Countdown());
-
     }
 
-    //waits for 5 seconds before invoking event
     IEnumerator Countdown()
     {
         yield return new WaitForSeconds(5f);

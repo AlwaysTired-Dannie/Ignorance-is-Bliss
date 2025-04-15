@@ -1,31 +1,66 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using NUnit.Framework;
 
-public class AddTextToChat : AddText
+[System.Serializable]
+public class TextMessage
 {
-    [SerializeField] GameObject parentObject;
-    [SerializeField] GameObject prefabText;
-    TextMeshProUGUI textBodyTMP;
-    TextMeshProUGUI textDateTMP;
     [SerializeField] string textMessage;
     [SerializeField] string date;
-
-    //first we grab the textmeshpro component
-    private void Start()
+    [SerializeField] GameObject parentObject;
+    [SerializeField] GameObject prefabText;
+    
+    public void InstantiateText()
     {
-        //textMeshPro = prefabText.GetComponent<TextMeshProUGUI>();
-        GameObject textBody  = prefabText.transform.GetChild(1).gameObject;
-        textBodyTMP = textBody.GetComponent<TextMeshProUGUI>();
-        GameObject textDate = prefabText.transform.GetChild(0).gameObject;
-        textDateTMP = textDate.GetComponent<TextMeshProUGUI>();
-    }
+        //First, check if the prefab and parentObject are assigned
+        if (prefabText == null || parentObject == null )
+        {
+            Debug.LogError("Prefab or parent object not assigned");
+            return;
+        }
 
-    //then we instantiate the object as a child to the parentObject, and set the text as the string
-    public override void AddTextChild()
-    {
+        //Instantiate prefab
+        GameObject newTextObject = GameObject.Instantiate(prefabText, parentObject.transform);
+
+        //Get TMP components
+        TextMeshProUGUI textBodyTMP = newTextObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI textDateTMP = newTextObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+
+        // Check if the TextMeshPro components are found
+        if (textBodyTMP == null || textDateTMP == null)
+        {
+            Debug.LogError("TextMeshPro components not found in the prefab!");
+            return;
+        }
+
+        // Set the text
         textBodyTMP.text = textMessage;
         textDateTMP.text = date;
-        Instantiate(prefabText, parentObject.transform);
-        
+    }
+}
+
+public class AddTextToChat : MonoBehaviour
+{
+    public List<TextMessage> textMessages = new List<TextMessage>();
+    //[SerializeField] GameObject parentObject;
+    public static Action notifSound;
+    
+    public void AddTextChild()
+    {
+        notifSound.Invoke();
+        /*if (parentObject == null)
+        {
+            Debug.LogError("Parentobject not assigned!");
+            return;
+        }*/
+
+        foreach (var message in textMessages)
+        {
+            message.InstantiateText();
+        }
+
     }
 }

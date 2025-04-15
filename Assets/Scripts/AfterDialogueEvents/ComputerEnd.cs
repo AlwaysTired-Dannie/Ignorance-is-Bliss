@@ -3,7 +3,7 @@ using UnityEngine;
 public class ComputerEnd : MonoBehaviour, DInterface
 {
     [SerializeField] Transform newTransform;
-    [SerializeField] GameObject friendTechInfo, phone, friendTechApp;
+    [SerializeField] GameObject friendTechInfo, phone, phoneBackground, friendTechApp;
     public void OnEndDialogue()
     {
         GameObject assistant = GameObject.FindGameObjectWithTag("Assistant");
@@ -12,6 +12,7 @@ public class ComputerEnd : MonoBehaviour, DInterface
             assistant.transform.position = newTransform.position;
             friendTechInfo.SetActive(true);
             phone.SetActive(true);
+            phoneBackground.SetActive(true);
             friendTechApp.SetActive(true);
         }
     }
