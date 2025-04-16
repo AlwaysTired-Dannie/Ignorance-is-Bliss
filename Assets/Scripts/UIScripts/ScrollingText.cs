@@ -38,47 +38,47 @@ public class  TypewriterMessage
         switch (emotion)
         {
             case Emotion.Normal:
-                Debug.Log("Emotion is normal");
+                //Debug.Log("Emotion is normal");
                 currentemotion = Emotion.Normal;
                 onEmotionChange.Invoke();
                 break;
             case Emotion.Happy:
-                Debug.Log($"Happy {emotion}");
+                //Debug.Log("Emotion is happy");
                 currentemotion = Emotion.Happy;
                 onEmotionChange.Invoke();
                 break;
             case Emotion.Upset:
-                Debug.Log("Emotion is upset");
+                //Debug.Log("Emotion is upset");
                 currentemotion = Emotion.Upset;
                 onEmotionChange.Invoke();
                 break;
             case Emotion.Angry:
-                Debug.Log("Emotion is angry");
+                //Debug.Log("Emotion is angry");
                 currentemotion = Emotion.Angry;
                 onEmotionChange.Invoke();
                 break;
             case Emotion.Surprised:
-                Debug.Log($"Surprised {emotion}");
+                //Debug.Log("Emotion is surprised");
                 currentemotion = Emotion.Surprised;
                 onEmotionChange.Invoke();
                 break;
             case Emotion.Excited:
-                Debug.Log("Emotion is excited");
+                //Debug.Log("Emotion is excited");
                 currentemotion= Emotion.Excited;
                 onEmotionChange.Invoke();
                 break;
             case Emotion.Loving:
-                Debug.Log("Emotion is loving");
+                //Debug.Log("Emotion is loving");
                 currentemotion = Emotion.Loving;
                 onEmotionChange.Invoke();
                 break;
             case Emotion.Deranged1:
-                Debug.Log("Emotion is deranged 01");
+                //Debug.Log("Emotion is deranged 01");
                 currentemotion = Emotion.Deranged1;
                 onEmotionChange.Invoke();
                 break;
             case Emotion.Deranged2:
-                Debug.Log("Emotion is deranged 02");
+                //Debug.Log("Emotion is deranged 02");
                 currentemotion = Emotion.Deranged2;
                 onEmotionChange.Invoke();
                 break;
@@ -242,7 +242,7 @@ public class ScrollingText : MonoBehaviour
             dInterface.OnEndDialogue();
         }
         
-        Debug.Log("End of queue");
+        //Debug.Log("End of queue");
     }
 
 }

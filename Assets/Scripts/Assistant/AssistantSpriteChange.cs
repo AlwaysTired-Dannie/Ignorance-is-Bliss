@@ -17,18 +17,35 @@ public class AssistantSpriteChange : MonoBehaviour
         //switch case for emotion changes
         switch (TypewriterMessage.currentemotion)
         {
-            case Emotion.Normal:
-                //spriteRenderer.sprite = spriteImages[0];
+            case Emotion.Normal:           
                 actualName = "Face_Neutral";
-                Debug.Log("this script has been called");
+                //Debug.Log("this script has been called");
                 break;
             case Emotion.Happy:
-                //spriteRenderer.sprite = spriteImages[1];
-                actualName = "upset";
-                Debug.Log("switch to Happy");
+                actualName = "Face_Happy";
+                //Debug.Log("switch to Happy");
                 break;
             case Emotion.Upset:
-                Debug.Log("Switch to Upset");
+                actualName = "Face_Upset";
+                //Debug.Log("Switch to Upset");
+                break;
+            case Emotion.Angry:
+                actualName = "Face_Angry";
+                break;
+            case Emotion.Surprised:
+                actualName = "Face_Surprised";
+                break;
+            case Emotion.Excited:
+                actualName = "Face_Excited";
+                break;
+            case Emotion.Loving:
+                actualName = "Face_Loving";
+                break;
+            case Emotion.Deranged1:
+                actualName = "Face_Deranged1";
+                break;
+            case Emotion.Deranged2:
+                actualName = "Face_Deranged2";
                 break;
         }    
         //asign sprite into image

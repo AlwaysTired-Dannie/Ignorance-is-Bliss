@@ -19,10 +19,10 @@ MonoBehaviour:
   - typeSpeed: 0.05
     currentText: As one of my primary objectives includes managing your STRESS, it's
       my job to keep it at an optimal level.
-    emotion: 0
+    emotion: 4
   - typeSpeed: 0.05
     currentText: Your STRESS seems to be quite high already.
-    emotion: 1
+    emotion: 4
   - typeSpeed: 0.05
     currentText: Let's fix that!
-    emotion: 0
+    emotion: 1
