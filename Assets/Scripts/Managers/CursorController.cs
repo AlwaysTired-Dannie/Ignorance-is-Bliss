@@ -7,6 +7,7 @@ using Unity.VisualScripting;
 
 public class CursorController : MonoBehaviour
 {
+    public static CursorController instance;
     private InteractiveCursorControls controls;
 
     //[SerializeField] private InteractableManager interactableManager;
@@ -27,6 +28,7 @@ public class CursorController : MonoBehaviour
     void Start()
     {
         mainCamera = Camera.main;
+        instance = this;
     }
 
     private void Awake()

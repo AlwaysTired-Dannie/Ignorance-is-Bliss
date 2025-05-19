@@ -226,7 +226,9 @@ public class ScrollingText : MonoBehaviour
         if (msgIndex >= messages.Count)
         {
             currentText = null;
-            tmpComponent.text = "";
+            //resets dialogue to the start
+            instance.currentText = instance.messages[0];
+            msgIndex = 0;
             EndOfMessages();
             gameObject.SetActive(false);
             return;

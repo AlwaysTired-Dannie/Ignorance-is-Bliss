@@ -42,10 +42,10 @@ public class AssistantSpriteChange : MonoBehaviour
                 actualName = "Face_Loving";
                 break;
             case Emotion.Deranged1:
-                actualName = "Face_Deranged1";
+                actualName = "Face_Deranged01";
                 break;
             case Emotion.Deranged2:
-                actualName = "Face_Deranged2";
+                actualName = "Face_Deranged02";
                 break;
         }    
         //asign sprite into image
