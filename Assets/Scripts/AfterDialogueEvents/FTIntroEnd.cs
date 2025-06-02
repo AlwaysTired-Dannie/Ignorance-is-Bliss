@@ -3,7 +3,7 @@ using UnityEngine;
 public class FTIntroEnd : MonoBehaviour, DInterface
 {
     [SerializeField] Transform newTransform;
-    [SerializeField] GameObject tutorialEnd, phone, friendTechApp, friendTechIcon;
+    [SerializeField] GameObject tutorialEnd, phone, friendTechApp, friendTechIcon, shoppingIcon;
     public void OnEndDialogue()
     {
         GameObject assistant = GameObject.FindGameObjectWithTag("Assistant");
@@ -14,6 +14,7 @@ public class FTIntroEnd : MonoBehaviour, DInterface
             phone.SetActive(false);
             friendTechApp.SetActive(false);
             friendTechIcon.SetActive(true);
+            shoppingIcon.SetActive(true);
         }
     }
 
