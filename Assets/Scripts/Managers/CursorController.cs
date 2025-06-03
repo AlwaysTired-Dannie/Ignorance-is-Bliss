@@ -15,6 +15,7 @@ public class CursorController : MonoBehaviour
     [SerializeField] private Texture2D interactiveCursorTexture;
 
     private Cursor interactiveCursor;
+    public static bool canInteract = true;
 
     public static Action MakeCursorDefault;
     public static Action MakeCursorInteractive;
@@ -67,7 +68,7 @@ public class CursorController : MonoBehaviour
     {
         RaycastHit hit;
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, 100, interactableMask))
+        if (Physics.Raycast(ray, out hit, 100, interactableMask) && canInteract)
         {
             //Debug.Log("hit interactable");
             InteractiveCursorTexture();
@@ -79,6 +80,27 @@ public class CursorController : MonoBehaviour
                 interactable.OnClickAction();
 
             }
+        }
+        else DefaultCursorTexture();
+
+    }
+
+    private void FindUI()
+    {
+        RaycastHit hit;
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out hit, 100, LayerMask.NameToLayer("UI")))
+        {
+            Debug.Log("hit UI");
+            InteractiveCursorTexture();
+            /*if (cursorIsInteractive && Input.GetMouseButtonDown(0))
+            {
+                IInteractable interactable = hit.transform.gameObject.GetComponent<IInteractable>();
+
+                Debug.Log("interacted");
+                interactable.OnClickAction();
+
+            }*/
         }
         else DefaultCursorTexture();
 

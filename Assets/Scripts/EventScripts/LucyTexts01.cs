@@ -4,6 +4,7 @@ using System.Collections;
 public class LucyTexts01 : MonoBehaviour
 {
     public float waitTime = 5;
+    [SerializeField] public GameObject alertIcon;
 
     private void Start()
     {
@@ -21,6 +22,7 @@ public class LucyTexts01 : MonoBehaviour
             yield return new WaitForSeconds(5f);
             AddTextToChat textScript = GetComponent<AddTextToChat>();
             textScript.AddTextChild();
+        alertIcon.SetActive(true);
             yield return null;
         
 

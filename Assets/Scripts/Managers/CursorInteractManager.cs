@@ -7,12 +7,14 @@ public class CursorInteractManager : MonoBehaviour
 
     public void OpenFriendTech()
     {
-        CursorController.instance.enabled = false;
+        //CursorController.instance.enabled = false;
+        CursorController.canInteract = false;
     }
 
     public void CloseFriendTech()
     {
-        CursorController.instance.enabled = true;
+        //CursorController.instance.enabled = true;
+        CursorController.canInteract = true;
     }
 
 }
