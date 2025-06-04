@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Messages:
   - typeSpeed: 0.05
-    currentText: With your purchase of a FriendTech AI companion, you have access
-      to our exclusive app.
+    currentText: '"With your purchase of a FriendTech AI companion, you have access
+      to our exclusive app."'
     emotion: 0
   - typeSpeed: 0.05
-    currentText: 'This is where you can access forums, Assistant settings, and even
-      buy cosmetics to fully customize your friend! '
+    currentText: '"This is where you can access forums, Assistant settings, and even
+      buy cosmetics to fully customize your friend!"'
     emotion: 0
   - typeSpeed: 0.05
-    currentText: Playing dress up has never been more fun.
+    currentText: '"Playing dress up has never been more fun."'
     emotion: 0

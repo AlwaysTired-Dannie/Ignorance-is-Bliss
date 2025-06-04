@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Messages:
   - typeSpeed: 0.05
-    currentText: If you have any questions, or you're feeling lonely, talk to me!
+    currentText: '"If you have any questions, or you''re feeling lonely, talk to
+      me!"'
     emotion: 0
   - typeSpeed: 0.05
-    currentText: 'I''m here for one reason only:'
-    emotion: 0
+    currentText: '"I''m here for one reason only:"'
+    emotion: 6
   - typeSpeed: 0.1
-    currentText: To be the only companion you'll ever need!
+    currentText: '"To be the only companion you''ll ever need!"'
     emotion: 0

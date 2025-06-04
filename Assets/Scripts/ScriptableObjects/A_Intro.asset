@@ -14,23 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Messages:
   - typeSpeed: 0.05
-    currentText: Hello. I am Assistant version 5.0, the new state-of-the-art AI holographic
-      companion.
+    currentText: '"Hello. I am Assistant version 5.0, the new state-of-the-art AI
+      holographic companion."'
     emotion: 0
   - typeSpeed: 0.05
-    currentText: Thank you for your purchase.
+    currentText: '"Thank you for your purchase."'
     emotion: 0
   - typeSpeed: 0.05
-    currentText: With me around, you'll never feel lonely again.
+    currentText: '"With me around, you''ll never feel lonely again."'
     emotion: 0
   - typeSpeed: 0.05
-    currentText: 'My primary objectives include:'
+    currentText: '"My primary objectives include:"'
     emotion: 0
   - typeSpeed: 0.05
-    currentText: Helping humanity end its loneliness epidemic.
+    currentText: '"Helping humanity end its loneliness epidemic."'
     emotion: 0
   - typeSpeed: 0.05
-    currentText: 'Aid you in managing stress. '
+    currentText: '"Aid you in managing stress."'
     emotion: 0
   - typeSpeed: 0.05
     currentText: Provide companionship to the lost and hopeless.

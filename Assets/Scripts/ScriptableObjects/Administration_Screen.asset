@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Messages:
   - typeSpeed: 0.05
-    currentText: I mean, sure.
+    currentText: '"I mean, sure."'
     emotion: 3
   - typeSpeed: 0.05
-    currentText: I don't know why you would need it, though.
+    currentText: '"I don''t know why you would need it, though."'
     emotion: 7
   - typeSpeed: 0.05
-    currentText: There's nothing interesting there, anyway.
+    currentText: '"There''s nothing interesting there, anyway."'
     emotion: 0

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public static int playerMoney = 10000;
     [Header("STRESS")]
     public static float stressLevel;
     [SerializeField]

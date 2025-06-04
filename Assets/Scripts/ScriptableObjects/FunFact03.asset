@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Messages:
   - typeSpeed: 0.05
-    currentText: Here's a fun fact!
+    currentText: '"Here''s a fun fact!"'
     emotion: 5
   - typeSpeed: 0.05
-    currentText: In all likelyhood, your name will be forgotten after two generations.
+    currentText: '"In all likelyhood, your name will be forgotten after two generations."'
     emotion: 0

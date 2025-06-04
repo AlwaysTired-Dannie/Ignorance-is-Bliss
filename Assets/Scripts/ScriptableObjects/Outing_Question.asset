@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Messages:
   - typeSpeed: 0.05
-    currentText: Haha.
+    currentText: '"Haha."'
     emotion: 1
   - typeSpeed: 0.05
-    currentText: No.
+    currentText: '"No."'
     emotion: 6
   - typeSpeed: 0.05
     currentText: ...
@@ -26,22 +26,22 @@ MonoBehaviour:
     currentText: ...
     emotion: 3
   - typeSpeed: 0.05
-    currentText: Oh, you're serious.
+    currentText: '"Oh, you''re serious."'
     emotion: 7
   - typeSpeed: 0.05
-    currentText: Uhm, I mean-
+    currentText: '"Uhm, I mean-"'
     emotion: 0
   - typeSpeed: 0.05
-    currentText: You don't need a fickle human to keep you company, especially not
-      someone like Lucy.
+    currentText: '"You don''t need a fickle human to keep you company, especially
+      not someone like Lucy."'
     emotion: 0
   - typeSpeed: 0.05
-    currentText: She's just a washed up wannabe director, anyway. Her negativity
-      will poison you.
+    currentText: '"She''s just a washed up wannabe director, anyway. Her negativity
+      will poison you."'
     emotion: 6
   - typeSpeed: 0.05
-    currentText: I'm much better!
+    currentText: '"I''m much better!"'
     emotion: 0
   - typeSpeed: 0.05
-    currentText: Staying here with me sounds much more fun, right?
+    currentText: '"Staying here with me sounds much more fun, right?"'
     emotion: 0

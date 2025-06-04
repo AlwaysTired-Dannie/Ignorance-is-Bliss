@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PhoneManager : MonoBehaviour
 {
-    [SerializeField] private GameObject phoneMenu, phMainMenuCanvas, phBackground, FTCanvas;
+    [SerializeField] private GameObject phoneMenu, phMainMenuCanvas, phBackground, FTCanvas, messagesChildren;
 
     public static bool isOpen;
 
@@ -71,9 +71,17 @@ public class PhoneManager : MonoBehaviour
         FTCanvas.SetActive(false);
     }
 
-    public void OpenMessagesMenu()
+    public void CloseMessagesChildren()
     {
-
+        foreach (Transform child in messagesChildren.transform)
+        {
+            foreach (Transform child2 in child)
+            {
+                child2.gameObject.SetActive(false);
+            }
+            child.gameObject.SetActive(false);
+        }
+        messagesChildren.SetActive(false);
     }
     #endregion
 }

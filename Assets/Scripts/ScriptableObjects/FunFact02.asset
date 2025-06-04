@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Messages:
   - typeSpeed: 0.05
-    currentText: As of 2024, there are over 6.8 billion smartphone users in the world
-      and within that population, 6.3% have a phone addiction.
+    currentText: '"As of 2024, there are over 6.8 billion smartphone users in the
+      world and within that population, 6.3% have a phone addiction."'
     emotion: 5
   - typeSpeed: 0.05
-    currentText: Research published by Virgin Mobile discovered that those billions
+    currentText: '"Research published by Virgin Mobile discovered that those billions
       of smartphone users receive 427% more messages and notifications than they
-      did a decade ago.
-    emotion: 0
+      did a decade ago."'
+    emotion: 6
   - typeSpeed: 0.05
-    currentText: Isn't the internet wonderful? So many people are connected!
+    currentText: '"Isn''t the internet wonderful? So many people are connected!"'
     emotion: 0

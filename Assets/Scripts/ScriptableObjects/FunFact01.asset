@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Messages:
   - typeSpeed: 0.05
-    currentText: It's estimated that around 1% of the internet is cats, though the
-      exact number is debated.
+    currentText: '"It''s estimated that around 1% of the internet is cats, though
+      the exact number is debated."'
     emotion: 0

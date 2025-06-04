@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Messages:
   - typeSpeed: 0.05
-    currentText: Nothing calms me down like cat videos.
+    currentText: '"Nothing calms me down like cat videos."'
     emotion: 0
   - typeSpeed: 0.05
-    currentText: Try it out now, use your computer to scroll social media.
+    currentText: '"Try it out now, use your computer to scroll social media."'
     emotion: 0

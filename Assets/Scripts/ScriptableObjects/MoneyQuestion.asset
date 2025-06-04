@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Messages:
   - typeSpeed: 0.05
-    currentText: You don't need to worry about that.
+    currentText: '"You don''t need to worry about that."'
     emotion: 1
   - typeSpeed: 0.05
-    currentText: Just spend, spend, spend! I'll take care of everything.
+    currentText: '"Just spend, spend, spend! I''ll take care of everything."'
     emotion: 5
   - typeSpeed: 0.05
-    currentText: Why don't you get yourself something nice? You deserve it.
+    currentText: '"Why don''t you get yourself something nice? You deserve it."'
     emotion: 0
   - typeSpeed: 0.05
-    currentText: How about some posters? You can buy some through the FriendTech
-      app.
+    currentText: '"How about some posters? You can buy some through the FriendTech
+      app."'
     emotion: 0

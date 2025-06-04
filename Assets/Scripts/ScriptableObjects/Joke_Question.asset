@@ -14,28 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Messages:
   - typeSpeed: 0.09
-    currentText: Finding joke...
+    currentText: '"Finding joke..."'
     emotion: 1
   - typeSpeed: 0.05
-    currentText: In an experiment to determine the funniest joke, the following emerged
-      as the most liked.
+    currentText: '"In an experiment to determine the funniest joke, the following
+      emerged as the most liked."'
     emotion: 0
   - typeSpeed: 0.05
-    currentText: Two hunters are out in the woods when one of them collapses. He
-      doesn't seem to be breathing and his eyes are glazed.
+    currentText: '"Two hunters are out in the woods when one of them collapses. He
+      doesn''t seem to be breathing and his eyes are glazed."'
     emotion: 0
   - typeSpeed: 0.05
-    currentText: The other guy whips out his phone and calls the emergency services.
-      He gasps, "My friend is dead! What can I do?"
+    currentText: '"The other guy whips out his phone and calls the emergency services.
+      He gasps, "My friend is dead! What can I do?""'
     emotion: 2
   - typeSpeed: 0.05
-    currentText: The operator says, "Calm down. I can help. First, let's make sure
-      he's dead."
-    emotion: 0
+    currentText: '"The operator says, "Calm down. I can help. First, let''s make
+      sure he''s dead.""'
+    emotion: 4
   - typeSpeed: 0.09
-    currentText: There is a silence; then a gun shot is heard. Back on the phone,
-      the guy says, "OK, now what?"
+    currentText: '"There is a silence; then a gun shot is heard. Back on the phone,
+      the guy says, "OK, now what?""'
     emotion: 7
   - typeSpeed: 0.05
-    currentText: That's funny. Ha. Ha.
+    currentText: '"That''s funny. Ha. Ha."'
     emotion: 0

@@ -14,24 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Messages:
   - typeSpeed: 0.05
-    currentText: There, isn't that better?
+    currentText: '"There, isn''t that better?"'
     emotion: 0
   - typeSpeed: 0.05
-    currentText: I've taken the liberty of adjusting your social media's algorithm.
-    emotion: 0
+    currentText: '"I''ve taken the liberty of adjusting your social media''s algorithm."'
+    emotion: 6
   - typeSpeed: 0.1
-    currentText: I hope you don't mind.
-    emotion: 0
-  - typeSpeed: 0.05
-    currentText: This way, more relaxing videos will be shown to you.
-    emotion: 0
-  - typeSpeed: 0.05
-    currentText: But be careful while scrolling!
+    currentText: '"I hope you don''t mind."'
     emotion: 1
   - typeSpeed: 0.05
-    currentText: Sometimes, distressing videos like the News will pop up, and it
-      will increase your STRESS.
+    currentText: '"This way, more relaxing videos will be shown to you."'
+    emotion: 4
+  - typeSpeed: 0.05
+    currentText: '"But be careful while scrolling!"'
     emotion: 1
   - typeSpeed: 0.05
-    currentText: Avoid them at all cost to stay happy!
+    currentText: '"Sometimes, distressing videos like the News will pop up, and it
+      will increase your STRESS."'
+    emotion: 1
+  - typeSpeed: 0.05
+    currentText: '"Avoid them at all cost to stay happy!"'
     emotion: 0
