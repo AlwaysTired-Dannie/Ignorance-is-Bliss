@@ -85,35 +85,14 @@ public class CursorController : MonoBehaviour
 
     }
 
-    private void FindUI()
-    {
-        RaycastHit hit;
-        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, 100, LayerMask.NameToLayer("UI")))
-        {
-            Debug.Log("hit UI");
-            InteractiveCursorTexture();
-            /*if (cursorIsInteractive && Input.GetMouseButtonDown(0))
-            {
-                IInteractable interactable = hit.transform.gameObject.GetComponent<IInteractable>();
-
-                Debug.Log("interacted");
-                interactable.OnClickAction();
-
-            }*/
-        }
-        else DefaultCursorTexture();
-
-    }
-
-    private void InteractiveCursorTexture()
+    public void InteractiveCursorTexture()
     {
         cursorIsInteractive = true;
         Vector2 hotspot = new Vector2(interactiveCursorTexture.width / 2, 0);
         Cursor.SetCursor(interactiveCursorTexture, hotspot, CursorMode.Auto);
     }
 
-    private void DefaultCursorTexture()
+    public void DefaultCursorTexture()
     {
         cursorIsInteractive = false;
         Cursor.SetCursor(default, default, default);
